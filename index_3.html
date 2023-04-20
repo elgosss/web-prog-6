@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание 3</title>
+    </head>
+    <body>
+        <div id="main_3">
+            <script>
+                "use strict";
+                class ssd_drive {
+                    constructor(volume, intface, chips, controller) {
+                        this.volume = volume;
+                        this.intface = intface;
+                        this["type of Flash chips"] = chips;
+                        this.controller = controller;
+                    }
+                    info() {
+                        document.write(`<p><b>SSD диск</b><br> Объем: ${this.volume}<br> Интерфейс: ${this.intface}<br> Тип микросхем Flash: ${this["type of Flash chips"]}<br>
+                            Контроллер: ${this.controller}</p>`);
+                    }
+                    get Volume() { return `Объем: ${this.volume}`; }
+                    set Volume(val) { this.volume = val; }
+                    get Intface() { return `Интерфейс: ${this.intface}`; }
+                    set Intface(val) { this.intface = val; }
+                    get Chips() { return `Тип микросхем Flash: ${this["type of Flash chips"]}`; }
+                    set Chips(val) { this["type of Flash chips"] = val; }
+                    get Controller() { return `Контроллер: ${this.controller}`; }
+                    set Controller(val) { this.controller = val; }
+                }
+                const ssd_1 = new ssd_drive(prompt('Введите объем SSD диска'), prompt('Введите интерфейс SSD диска'), prompt('Введите тип микросхем Flash SSD диска'),
+                prompt('Введите контроллер SSD диска'));
+                ssd_1.info();
+            </script>
+        </div>
+    </body>
+</html>

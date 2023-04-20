@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание 4</title>
+    </head>
+    <body>
+        <div id="main_4">
+            <script>
+                "use strict";
+                class ssd_drive {
+                    constructor(volume, intface, chips, controller) {
+                        this.volume = volume;
+                        this.intface = intface;
+                        this["type of Flash chips"] = chips;
+                        this.controller = controller;
+                    }
+                    info() {
+                        document.write(`<p><b>SSD диск</b><br> Объем: ${this.volume}<br> Интерфейс: ${this.intface}<br> Тип микросхем Flash: ${this["type of Flash chips"]}<br>
+                            Контроллер: ${this.controller}</p>`);
+                    }
+                    get Volume() { return `Объем: ${this.volume}`; }
+                    set Volume(val) { this.volume = val; }
+                    get Intface() { return `Интерфейс: ${this.intface}`; }
+                    set Intface(val) { this.intface = val; }
+                    get Chips() { return `Тип микросхем Flash: ${this["type of Flash chips"]}`; }
+                    set Chips(val) { this["type of Flash chips"] = val; }
+                    get Controller() { return `Контроллер: ${this.controller}`; }
+                    set Controller(val) { this.controller = val; }
+                }
+
+                class ssd extends ssd_drive {
+                    constructor(volume, intface, chips, controller, date, cost) {
+                        super(volume, intface, chips, controller);
+                        this["date of market launch"] = date;
+                        this.cost = cost;
+                    }
+                    info() {
+                        super.info();
+                        document.write(`<p>Дата выхода на рынок: ${this["date of market launch"]}<br> Стоимость: ${this.cost}</p>`);
+                    }
+                    get Volume() { return super.Volume; }
+                    set Volume(val) { super.Volume = val; }
+                    get Intface() { return super.Intface; }
+                    set Intface(val) { super.Intface = val; }
+                    get Chips() { return super.Chips; }
+                    set Chips(val) { super.Chips = val; }
+                    get Controller() { return super.Controller; }
+                    set Controller(val) { super.Controller = val; }
+                    get Date() { return `Дата выхода на рынок: ${this["date of market launch"]}`; }
+                    set Date(val) { this["date of market launch"] = val; }
+                    get Cost() { return `Стоимость: ${this.cost}`; }
+                    set Cost(val) { this.cost = val; }
+                }
+
+                const ssd_1 = new ssd(prompt('Введите объем SSD диска'), prompt('Введите интерфейс SSD диска'), prompt('Введите тип микросхем Flash SSD диска'),
+                prompt('Введите контроллер SSD диска'), prompt('Введите дату выхода SSD диска на рынок'), prompt('Введите стоимость SSD диска'));
+                ssd_1.info();
+            </script>
+        </div>
+    </body>
+</html>

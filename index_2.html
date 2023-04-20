@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание 2</title>
+    </head>
+    <body>
+        <div id="main_2">
+            <script>
+                "use strict";
+                function SSD_drive(volume, intface, chips, controller) {
+                    this.volume = volume;
+                    this.intface = intface;
+                    this["type of Flash chips"] = chips;
+                    this.controller = controller;
+                }
+                Object.defineProperties(SSD_drive.prototype, {
+                    Volume: {
+                        get() { return `Объем: ${this.volume}`; },
+                        set(val) { this.volume = val; }
+                    },
+                    Intface: {
+                        get() { return `Интерфейс: ${this.intface}`; },
+                        set(val) { this.intface = val; }
+                    },
+                    Chips: {
+                        get() { return `Тип микросхем Flash: ${this["type of Flash chips"]}`; },
+                        set(val) { this["type of Flash chips"] = val; }
+                    },
+                    Controller: {
+                        get() { return `Контроллер: ${this.controller}`; },
+                        set(val) { this.controller = val; }
+                    }
+                });
+                SSD_drive.prototype["date of market launch"] = prompt('Введите дату выхода SSD диска на рынок');
+                SSD_drive.prototype.info = function() {
+                    document.write(`<p><b>SSD диск</b><br> Объем: ${this.volume}<br> Интерфейс: ${this.intface}<br> Тип микросхем Flash: ${this["type of Flash chips"]}<br>
+                            Контроллер: ${this.controller}<br> Дата выхода на рынок: ${this["date of market launch"]}</p>`);
+                };
+                const ssd_1 = new SSD_drive(prompt('Введите объем SSD диска'), prompt('Введите интерфейс SSD диска'), prompt('Введите тип микросхем Flash SSD диска'),
+                prompt('Введите контроллер SSD диска'));
+                ssd_1.info();
+                ssd_1.Volume = prompt('Введите измененную информацию об объеме SSD диска');
+                ssd_1.Intface = prompt('Введите измененную информацию об интерфейсе SSD диска');
+                ssd_1.Chips = prompt('Введите измененную информацию о типе микросхем Flash SSD диска');
+                ssd_1.Controller = prompt('Введите измененную информацию о контроллере SSD диска');
+                document.write(`<p><em>Измененный объект</em>: SSD диск<br> ${ssd_1.Volume}<br> ${ssd_1.Intface}<br> ${ssd_1.Chips}<br> ${ssd_1.Controller}`);
+            </script>
+        </div>
+    </body>
+</html>

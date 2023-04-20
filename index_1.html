@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание 1</title>
+    </head>
+    <body>
+        <div id="main_1">
+            <script>
+                "use strict";
+                let ssd_drive = {
+                    volume: prompt('Введите объем SSD диска'),
+                    Interface: prompt('Введите интерфейс SSD диска'),
+                    "type of Flash chips": prompt('Введите тип микросхем Flash SSD диска'),
+                    controller: prompt('Введите контроллер SSD диска'),
+                    info: function() {
+                        document.write(`<p><b>SSD диск</b><br> Объем: ${this.volume}<br> Интерфейс: ${this.Interface}<br> Тип микросхем Flash: ${this["type of Flash chips"]}<br>
+                            Контроллер: ${this.controller}</p>`);
+                    }
+                };
+                ssd_drive.info();
+            </script>
+        </div>
+    </body>
+</html>
